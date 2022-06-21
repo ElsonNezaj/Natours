@@ -1,6 +1,6 @@
 .row {
     max-width: $grid-width;
-    background-color: #eee;
+
     margin: 0 auto;
 
     &:not(:last-child) {
@@ -10,7 +10,7 @@
     @include clearfix;
 
     [class^="col-"] {
-        background-color: orangered;
+   
         float: left;
 
         &:not(:last-child) {
@@ -41,6 +41,5 @@
     .col-3-of-4 {
         width: calc( 3*((100% - 3 * #{$gutter-horitontal}) / 4) +  2*#{$gutter-horitontal});
     }
-
 
 }
