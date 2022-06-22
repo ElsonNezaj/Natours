@@ -49,6 +49,16 @@
     }
 }
 
+&--green {
+    background-color: $color-primary;
+    color: $color-white;
+    transition: all .2s;
+
+    &::after {
+        background-color: $color-primary;
+    }
+}
+
 &--animated {
     animation-name: btnmove;
     animation-duration: .5s;
