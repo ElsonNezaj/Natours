@@ -12,9 +12,11 @@
         right: 6.5rem;
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 1000;
+        transition: all .6s cubic-bezier(0.83, 0, 0.17, 1);
 
-        transform: scale(80);
+       // transform: scale(80);
     }
+
 
     &_button {
         background-color: $color-white;
@@ -25,15 +27,20 @@
         right: 6rem;
         border-radius: 50%;
         z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba($color-black, .05);
+        text-align: center;
+        cursor: pointer;
     }
   
     &_nav {
         height: 100vh;
-        width: 100%;
+        width: 0;
         position: fixed;
         top: 0;
         right: 0;
         z-index: 1500;
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
     }
 
     &_list {
@@ -43,6 +50,7 @@
         transform: translate(-50%, -50%);
         list-style: none;
         text-align: center;
+        width: 100%;
     }
 
     &_item {
@@ -74,5 +82,64 @@
             color: $color-primary;
             transform: translateX(1rem);
         }
+    }
+
+    // Function Button
+
+    &_checkbox:checked ~ &_background {
+        transform: scale(80);
+    }
+
+    &_checkbox:checked ~ &_nav {
+        opacity: 1;
+        width: 100%;
+    }
+
+    
+
+    // Navigation Icon
+    &_icon {
+        position: relative;
+        margin-top: 3.5rem;
+
+        &,&::before, &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-dark-3;
+            display: inline-block;
+        }
+
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before {top: -.8rem;}
+        &::after {top: .8rem;}
+
+    }
+
+    &_button:hover &_icon::before {
+        top: -1rem;
+    }
+
+    &_button:hover &_icon::after {
+        top: 1rem;
+    }
+
+    &_checkbox:checked + &_button &_icon {
+        background-color: transparent;
+    }
+
+    &_checkbox:checked + &_button &_icon::before {
+        transform: rotate(135deg);
+        top: 0;
+    }
+
+    &_checkbox:checked + &_button &_icon::after {
+        top: 0;
+        transform: rotate(-135deg);
     }
 }
