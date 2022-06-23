@@ -23,23 +23,48 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(0);
         transition: all .4s .2s;
+
+        @include respond(tab-land) {
+            width: 80%;
+        }
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+        }
     }
 
     &_left {
         display: table-cell;
         width: 33.3333%; 
-    } 
+        @include respond(tab-land) {
+            width: 40%;
+            vertical-align: middle;
+        }
+    }
 
     &_right {
         width: 66.666667%;
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;
+
+        @include respond(phone){
+            width: 60%;
+            padding: 1rem 3rem;
+        }
     }
 
     &_img {
         display: block;
         width: 100%;
+        @include respond(phone) {
+            display: inline;
+            width: 100%;
+        }
     }
 
     &_text {
@@ -53,6 +78,12 @@
         column-count: 2;
         column-gap: 4rem;
         column-rule: 1px solid $color-grey-light-2;
+
+        @include respond(phone){
+            column-gap: 2rem;
+            column-count: 1;
+            font-size: 1.2rem;
+        }
        
         -moz-hyphens: auto;
         -ms-hyphens: auto;

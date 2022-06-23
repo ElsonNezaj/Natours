@@ -32,6 +32,9 @@ $breakpoint argument choices
 -tab-port
 -tab-land
 -big desktop
+
+ORDER : BASE - TYPOGRAPHY > general layout grid > page layout > components
+
 */
 
 @mixin respond($breakpoint) {
@@ -49,6 +52,12 @@ $breakpoint argument choices
     
     @if $breakpoint == tab-land {    // 1200px
         @media (max-width: 75em) {
+            @content 
+        }
+    };
+
+    @if $breakpoint == small_desktop {  // 1320px
+        @media (max-width: 82.5em) {
             @content
         }
     };
@@ -58,4 +67,6 @@ $breakpoint argument choices
             @content
         }
     };
+
+    
 }
