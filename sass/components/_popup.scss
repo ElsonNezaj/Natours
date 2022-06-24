@@ -19,7 +19,7 @@
     }
 
     &_content {
-        @include absCenter;
+        @include absCenter; 
         width: 75%;
         background-color: $color-white;
         box-sizing: 0 2rem 4rem rgba($color-black, .2);
