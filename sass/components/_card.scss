@@ -154,18 +154,19 @@
         font-weight: 200;
     }
 
+    @media only screen and (max-width: 56.25em), only screen and (hover:none) {
 
-    @include respond(tab-port) {
-    height: auto;
-    border-radius: 3px;
-    background-color: $color-white;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
-
-    /*Front and Back Card Sides*/
-    &_side {
+        
         height: auto;
-        position: relative;
-
+        border-radius: 3px;
+        background-color: $color-white;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+        
+        /*Front and Back Card Sides*/
+        &_side {
+            height: auto;
+            position: relative;
+            
         &--front {
             padding-bottom: 5rem;
         }
@@ -203,6 +204,7 @@
     &_price-value {
         font-size: 4rem;
     }
+    
     }
 
 }
